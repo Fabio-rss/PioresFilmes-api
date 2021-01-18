@@ -20,13 +20,13 @@ class PioresFilmesApiApplicationTests {
 
 	@Autowired
 	private TestRestTemplate restTemplate;
-	
+
 	@LocalServerPort
 	private int port;
-	
+
 	@Autowired
 	private LerPlanilhaServico servico;
-	
+
 	@Test
 	void contextLoads() {
 		this.servico.extrairDadosPlanilha("movielist.csv");
@@ -36,9 +36,9 @@ class PioresFilmesApiApplicationTests {
 	public void buscar_premiacao() {
 		HttpHeaders headers = new HttpHeaders();
 		HttpEntity<String> entity = new HttpEntity<String>(null, headers);
-		
-		
-		ResponseEntity<MinMaxDTO> response = restTemplate.exchange(getUrlServidor() + "/premiacoes", HttpMethod.GET, entity, MinMaxDTO.class);
+
+		ResponseEntity<MinMaxDTO> response = restTemplate.exchange(getUrlServidor() + "/premiacoes", HttpMethod.GET,
+				entity, MinMaxDTO.class);
 
 		assertThat(response.getBody() != null);
 	}

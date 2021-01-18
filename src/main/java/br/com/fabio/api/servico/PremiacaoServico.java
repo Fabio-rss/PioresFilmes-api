@@ -46,12 +46,25 @@ public class PremiacaoServico {
 		}
 
 		MinMaxDTO respostaDTO = new MinMaxDTO();
-
 		Collections.sort(lista);
-		respostaDTO.setMin(new ArrayList<>(lista));
+		respostaDTO.setMin(this.processarResultado(lista));
+		
 		Collections.sort(lista, Collections.reverseOrder());
-		respostaDTO.setMax(lista);
+		respostaDTO.setMax(this.processarResultado(lista));
 
 		return respostaDTO;
+	}
+	
+	private List<VitoriaProdutorDTO> processarResultado(List<VitoriaProdutorDTO> lista){
+		List<VitoriaProdutorDTO> resultado = new ArrayList<>();
+		int intervalo = lista.get(0).getInterval();
+		for (VitoriaProdutorDTO dto : lista) {
+			if(intervalo == dto.getInterval()) {
+				resultado.add(dto);
+			}else {
+				break;
+			}
+		}
+		return resultado;
 	}
 }
