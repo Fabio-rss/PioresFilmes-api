@@ -29,12 +29,14 @@ public class PremiacaoServico {
 			VitoriaProdutorDTO dto = new VitoriaProdutorDTO(p.getNome(), 0, 9999, 0);
 
 			for (Filme f : p.getFilmes()) {
-				if (f.getAno() < dto.getPreviousWin()) {
-					dto.setPreviousWin(f.getAno());
-				}
+				if (f.getVencedor()) {
+					if (f.getAno() < dto.getPreviousWin()) {
+						dto.setPreviousWin(f.getAno());
+					}
 
-				if (f.getAno() > dto.getFollowingWin()) {
-					dto.setFollowingWin(f.getAno());
+					if (f.getAno() > dto.getFollowingWin()) {
+						dto.setFollowingWin(f.getAno());
+					}
 				}
 			}
 
