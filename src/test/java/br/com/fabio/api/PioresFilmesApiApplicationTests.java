@@ -29,7 +29,7 @@ class PioresFilmesApiApplicationTests {
 	
 	@Test
 	void contextLoads() {
-		this.servico.extrairDadosPlanilha("C:\\temp\\movielist.csv");
+		this.servico.extrairDadosPlanilha("movielist.csv");
 	}
 
 	@Test

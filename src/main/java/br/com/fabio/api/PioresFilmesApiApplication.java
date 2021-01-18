@@ -21,7 +21,7 @@ public class PioresFilmesApiApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		this.servico.extrairDadosPlanilha("C:\\temp\\movielist.csv");
+		this.servico.extrairDadosPlanilha("movielist.csv");
 	}
 
 }

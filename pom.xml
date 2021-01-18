@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com.fabio</groupId>
 	<artifactId>PioresFilmes-api</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>PioresFilmes-api</name>
 	<description>Piores Filmes API</description>
 
